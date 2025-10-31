@@ -1,14 +1,14 @@
 {
-  "collectionName": "components_hero_hero_caroussels",
+  "collectionName": "components_section_hero_slide_carousell_sections",
   "info": {
-    "displayName": "HeroCarousselSection"
+    "displayName": "HeroSlideCarousellSection"
   },
   "options": {},
   "attributes": {
     "HeroSlide": {
       "type": "component",
       "component": "hero.hero-slide",
-      "repeatable": false
+      "repeatable": true
     }
   },
   "config": {}

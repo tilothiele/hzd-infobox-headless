@@ -24,16 +24,6 @@ export interface HeroHeroActionButton extends Struct.ComponentSchema {
   };
 }
 
-export interface HeroHeroCaroussel extends Struct.ComponentSchema {
-  collectionName: 'components_hero_hero_caroussels';
-  info: {
-    displayName: 'HeroCarousselSection';
-  };
-  attributes: {
-    HeroSlide: Schema.Attribute.Component<'hero.hero-slide', false>;
-  };
-}
-
 export interface HeroHeroSlide extends Struct.ComponentSchema {
   collectionName: 'components_hero_hero_slides';
   info: {
@@ -108,6 +98,17 @@ export interface MenuMenuItem3 extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionHeroSlideCarousellSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_slide_carousell_sections';
+  info: {
+    displayName: 'HeroSlideCarousellSection';
+  };
+  attributes: {
+    HeroSlide: Schema.Attribute.Component<'hero.hero-slide', true>;
+  };
+}
+
 export interface SectionTeaserButton extends Struct.ComponentSchema {
   collectionName: 'components_section_teaser_buttons';
   info: {
@@ -136,13 +137,13 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'action.button': ActionButton;
       'hero.hero-action-button': HeroHeroActionButton;
-      'hero.hero-caroussel': HeroHeroCaroussel;
       'hero.hero-slide': HeroHeroSlide;
       'layout.header': LayoutHeader;
       'legende.social-link': LegendeSocialLink;
       'menu.menu-item': MenuMenuItem;
       'menu.menu-item2': MenuMenuItem2;
       'menu.menu-item3': MenuMenuItem3;
+      'section.hero-slide-carousell-section': SectionHeroSlideCarousellSection;
       'section.teaser-button': SectionTeaserButton;
       'section.teaser-card-section': SectionTeaserCardSection;
     }
