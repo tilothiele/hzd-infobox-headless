@@ -1,62 +1,150 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface MenuLinkDropdown extends Struct.ComponentSchema {
-  collectionName: 'components_menu_link_dropdowns';
+export interface ActionButton extends Struct.ComponentSchema {
+  collectionName: 'components_action_buttons';
   info: {
-    displayName: 'Dropdown';
+    displayName: 'Button';
   };
   attributes: {
-    sections: Schema.Attribute.Relation<'oneToMany', 'api::section.section'>;
-    Title: Schema.Attribute.String;
+    Kind: Schema.Attribute.Enumeration<['primary', 'secondary']>;
+    Label: Schema.Attribute.String;
+    Url: Schema.Attribute.String;
   };
 }
 
-export interface MenuLinkLinks extends Struct.ComponentSchema {
-  collectionName: 'components_menu_link_links';
+export interface HeroHeroActionButton extends Struct.ComponentSchema {
+  collectionName: 'components_hero_hero_action_buttons';
   info: {
-    displayName: 'links';
+    displayName: 'HeroActionButton';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    Kind: Schema.Attribute.Enumeration<['primary', 'secondary']>;
+    Label: Schema.Attribute.String;
+    Url: Schema.Attribute.String;
+  };
+}
+
+export interface HeroHeroCaroussel extends Struct.ComponentSchema {
+  collectionName: 'components_hero_hero_caroussels';
+  info: {
+    displayName: 'HeroCarousselSection';
+  };
+  attributes: {
+    HeroSlide: Schema.Attribute.Component<'hero.hero-slide', false>;
+  };
+}
+
+export interface HeroHeroSlide extends Struct.ComponentSchema {
+  collectionName: 'components_hero_hero_slides';
+  info: {
+    displayName: 'HeroSlide';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    HeroActionButton: Schema.Attribute.Component<
+      'hero.hero-action-button',
+      false
     >;
-    name: Schema.Attribute.String;
+    HeroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    SubHeading: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutHeader extends Struct.ComponentSchema {
+  collectionName: 'components_layout_headers';
+  info: {
+    displayName: 'Header';
+  };
+  attributes: {
+    Logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    menu: Schema.Attribute.Relation<'oneToOne', 'api::menu.menu'>;
+    Socials: Schema.Attribute.Component<'legende.social-link', true>;
+  };
+}
+
+export interface LegendeSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_legende_social_links';
+  info: {
+    displayName: 'Social Link';
+  };
+  attributes: {
+    Channel: Schema.Attribute.Enumeration<['twitter', 'facebook', 'youtube']>;
+    Url: Schema.Attribute.String;
+  };
+}
+
+export interface MenuMenuItem extends Struct.ComponentSchema {
+  collectionName: 'components_menu_menu_items';
+  info: {
+    displayName: 'MenuItem1';
+  };
+  attributes: {
+    Label: Schema.Attribute.String;
+    SubItems: Schema.Attribute.Component<'menu.menu-item2', true>;
     url: Schema.Attribute.String;
   };
 }
 
-export interface MenuLinkMenuButton extends Struct.ComponentSchema {
-  collectionName: 'components_menu_link_menu_buttons';
+export interface MenuMenuItem2 extends Struct.ComponentSchema {
+  collectionName: 'components_menu_menu_item2s';
   info: {
-    displayName: 'MenuButton';
+    displayName: 'MenuItem2';
   };
   attributes: {
-    Title: Schema.Attribute.String;
-    Type: Schema.Attribute.Enumeration<['Primary', 'Secondary']>;
+    Label: Schema.Attribute.String;
+    SubItems: Schema.Attribute.Component<'menu.menu-item3', true>;
     Url: Schema.Attribute.String;
   };
 }
 
-export interface MenuLinkMenuLink extends Struct.ComponentSchema {
-  collectionName: 'components_menu_link_menu_links';
+export interface MenuMenuItem3 extends Struct.ComponentSchema {
+  collectionName: 'components_menu_menu_item3s';
   info: {
-    displayName: 'MenuLink';
+    displayName: 'MenuItem3';
   };
   attributes: {
-    Title: Schema.Attribute.String;
+    Label: Schema.Attribute.String;
     Url: Schema.Attribute.String;
+  };
+}
+
+export interface SectionTeaserButton extends Struct.ComponentSchema {
+  collectionName: 'components_section_teaser_buttons';
+  info: {
+    displayName: 'TeaserButton';
+  };
+  attributes: {
+    Label: Schema.Attribute.String;
+    Url: Schema.Attribute.String;
+  };
+}
+
+export interface SectionTeaserCardSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_teaser_card_sections';
+  info: {
+    displayName: 'TeaserCardSection';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    SubHeadeing: Schema.Attribute.String;
+    TeaserButton: Schema.Attribute.Component<'section.teaser-button', false>;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'menu-link.dropdown': MenuLinkDropdown;
-      'menu-link.links': MenuLinkLinks;
-      'menu-link.menu-button': MenuLinkMenuButton;
-      'menu-link.menu-link': MenuLinkMenuLink;
+      'action.button': ActionButton;
+      'hero.hero-action-button': HeroHeroActionButton;
+      'hero.hero-caroussel': HeroHeroCaroussel;
+      'hero.hero-slide': HeroHeroSlide;
+      'layout.header': LayoutHeader;
+      'legende.social-link': LegendeSocialLink;
+      'menu.menu-item': MenuMenuItem;
+      'menu.menu-item2': MenuMenuItem2;
+      'menu.menu-item3': MenuMenuItem3;
+      'section.teaser-button': SectionTeaserButton;
+      'section.teaser-card-section': SectionTeaserCardSection;
     }
   }
 }

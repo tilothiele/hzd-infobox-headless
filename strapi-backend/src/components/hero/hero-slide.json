@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_hero_hero_slides",
+  "info": {
+    "displayName": "HeroSlide"
+  },
+  "options": {},
+  "attributes": {
+    "HeroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "SubHeading": {
+      "type": "string"
+    },
+    "HeroActionButton": {
+      "type": "component",
+      "component": "hero.hero-action-button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

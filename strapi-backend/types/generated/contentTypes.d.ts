@@ -430,12 +430,12 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiMainMenuMainMenu extends Struct.SingleTypeSchema {
-  collectionName: 'main_menus';
+export interface ApiMenuMenu extends Struct.CollectionTypeSchema {
+  collectionName: 'menus';
   info: {
-    displayName: 'MainMenu';
-    pluralName: 'main-menus';
-    singularName: 'main-menu';
+    displayName: 'Menu';
+    pluralName: 'menus';
+    singularName: 'menu';
   };
   options: {
     draftAndPublish: true;
@@ -445,43 +445,9 @@ export interface ApiMainMenuMainMenu extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::main-menu.main-menu'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::menu.menu'> &
       Schema.Attribute.Private;
-    MainMenuItems: Schema.Attribute.DynamicZone<
-      ['menu-link.menu-link', 'menu-link.menu-button', 'menu-link.dropdown']
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSectionSection extends Struct.CollectionTypeSchema {
-  collectionName: 'sections';
-  info: {
-    displayName: 'Section';
-    pluralName: 'sections';
-    singularName: 'section';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    links: Schema.Attribute.Component<'menu-link.links', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::section.section'
-    > &
-      Schema.Attribute.Private;
+    MenuItems: Schema.Attribute.Component<'menu.menu-item', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -999,8 +965,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::main-menu.main-menu': ApiMainMenuMainMenu;
-      'api::section.section': ApiSectionSection;
+      'api::menu.menu': ApiMenuMenu;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

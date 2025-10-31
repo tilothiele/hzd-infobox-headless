@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_menu_menu_item2s",
+  "info": {
+    "displayName": "MenuItem2"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    },
+    "SubItems": {
+      "type": "component",
+      "component": "menu.menu-item3",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

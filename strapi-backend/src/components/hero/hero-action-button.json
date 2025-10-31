@@ -1,21 +1,21 @@
 {
-  "collectionName": "components_menu_link_menu_buttons",
+  "collectionName": "components_hero_hero_action_buttons",
   "info": {
-    "displayName": "MenuButton"
+    "displayName": "HeroActionButton"
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "Label": {
       "type": "string"
     },
     "Url": {
       "type": "string"
     },
-    "Type": {
+    "Kind": {
       "type": "enumeration",
       "enum": [
-        "Primary",
-        "Secondary"
+        "primary",
+        "secondary"
       ]
     }
   },

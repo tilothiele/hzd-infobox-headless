@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_section_teaser_buttons",
+  "info": {
+    "displayName": "TeaserButton"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

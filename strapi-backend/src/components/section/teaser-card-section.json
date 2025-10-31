@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_teaser_card_sections",
+  "info": {
+    "displayName": "TeaserCardSection"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "SubHeadeing": {
+      "type": "string"
+    },
+    "TeaserButton": {
+      "type": "component",
+      "component": "section.teaser-button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

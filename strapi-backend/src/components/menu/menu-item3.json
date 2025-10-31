@@ -1,11 +1,11 @@
 {
-  "collectionName": "components_menu_link_menu_links",
+  "collectionName": "components_menu_menu_item3s",
   "info": {
-    "displayName": "MenuLink"
+    "displayName": "MenuItem3"
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "Label": {
       "type": "string"
     },
     "Url": {

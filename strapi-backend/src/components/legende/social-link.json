@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_legende_social_links",
+  "info": {
+    "displayName": "Social Link"
+  },
+  "options": {},
+  "attributes": {
+    "Channel": {
+      "type": "enumeration",
+      "enum": [
+        "twitter",
+        "facebook",
+        "youtube"
+      ]
+    },
+    "Url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
