@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_menu_link_menu_buttons",
+  "info": {
+    "displayName": "MenuButton"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Primary",
+        "Secondary"
+      ]
+    }
+  },
+  "config": {}
+}
