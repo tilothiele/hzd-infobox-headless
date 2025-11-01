@@ -1,3 +1,0 @@
-# hzd-dev-playground
-
-asdf

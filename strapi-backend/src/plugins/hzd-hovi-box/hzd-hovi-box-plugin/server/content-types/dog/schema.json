@@ -6,30 +6,36 @@
     "pluralName": "dogs",
     "displayName": "Dog"
   },
-  "options": {
-    "draftAndPublish": false
+  "pluginOptions": {
+    "content-manager": {
+      "visible": true
+    },
+    "content-type-builder": {
+      "visible": true
+    }
   },
-  "pluginOptions": {},
+  "options": {
+    "comment": ""
+  },
   "attributes": {
     "givenName": {
-      "type": "string",
-      "maxLength": 100
+      "type": "string"
     },
     "fullKennelName": {
-      "type": "string",
-      "maxLength": 500
+      "type": "string"
     },
     "avatar": {
       "type": "media",
-      "multiple": false,
       "allowedTypes": [
         "images",
-        "files"
-      ]
+        "files",
+        "videos",
+        "audios"
+      ],
+      "multiple": false
     },
     "microchipNo": {
-      "type": "string",
-      "maxLength": 30
+      "type": "string"
     },
     "stuntLicenseSince": {
       "type": "date"
@@ -43,8 +49,8 @@
     "sex": {
       "type": "enumeration",
       "enum": [
-        "M",
-        "F"
+        "F",
+        "M"
       ]
     },
     "color": {
@@ -55,40 +61,17 @@
         "B"
       ]
     },
+
     "father": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::dog.dog",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "sex"
-            },
-            "F"
-          ]
-        }
-      }
+      "target": "plugin::hzd-hovi-box.dog"
     },
+
     "mother": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::dog.dog",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "sex"
-            },
-            "F"
-          ]
-        }
-      }
-    },
-    "owner": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::member.member"
+      "target": "plugin::hzd-hovi-box.dog"
     }
   }
 }
