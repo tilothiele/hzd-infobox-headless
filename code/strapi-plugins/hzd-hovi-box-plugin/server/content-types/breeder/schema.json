@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "breeders",
+  "info": {
+    "singularName": "breeder",
+    "pluralName": "breeders",
+    "displayName": "Breeder"
+  },  
+  "pluginOptions": {
+    "content-manager": {
+      "visible": true
+    },
+    "content-type-builder": {
+      "visible": true
+    }
+  },
+  "options": {
+    "comment": ""
+  },
+  "attributes": {
+    "kennelName": {
+      "type": "string"
+    },
+    "breedingLicenseSince": {
+      "type": "date"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "breeder"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dogs",
+  "info": {
+    "singularName": "dog",
+    "pluralName": "dogs",
+    "displayName": "Dog"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "givenName": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "fullKennelName": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "microchipNo": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "stuntLicenseSince": {
+      "type": "date"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "dateOfDeath": {
+      "type": "date"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "M",
+        "F"
+      ]
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "S",
+        "SM",
+        "B"
+      ]
+    },
+    "father": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dog.dog"
+    },
+    "mother": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dog.dog"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::member.member"
+    }
+  }
+}

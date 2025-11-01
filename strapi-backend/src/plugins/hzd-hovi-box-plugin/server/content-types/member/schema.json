@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "Member"
+  },
+  "options": {
+    "comment": ""
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": true
+    },
+    "content-type-builder": {
+      "visible": true
+    }
+  },
+  "attributes": {
+    "userRef": {
+      "type": "integer"
+    },
+    "memberSince": {
+      "type": "date"
+    },
+    "membershipNo": {
+      "type": "integer"
+    },
+    "cancellationOn": {
+      "type": "date"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "addressOne": {
+      "type": "string"
+    },
+    "addressTwo": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "F",
+        "M"
+      ]
+    },
+    "dateOfBirh": {
+      "type": "date"
+    },
+    "dateOfDeath": {
+      "type": "date"
+    }
+  }
+}

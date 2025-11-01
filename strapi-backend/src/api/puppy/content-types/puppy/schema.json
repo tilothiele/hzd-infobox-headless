@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "puppies",
+  "info": {
+    "singularName": "puppy",
+    "pluralName": "puppies",
+    "displayName": "Puppy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dog": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::dog.dog"
+    },
+    "available": {
+      "type": "boolean"
+    }
+  }
+}

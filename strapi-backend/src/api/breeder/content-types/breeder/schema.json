@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "breeders",
+  "info": {
+    "singularName": "breeder",
+    "pluralName": "breeders",
+    "displayName": "Breeder"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "member": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::member.member"
+    },
+    "kennelName": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "breedingLicenseSince": {
+      "type": "date"
+    },
+    "litters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::litter.litter",
+      "mappedBy": "breeder"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abcs",
+  "info": {
+    "singularName": "abc",
+    "pluralName": "abcs",
+    "displayName": "abc"
+  },
+  "options": {
+    "comment": ""
+  },
+
+  "pluginOptions": {
+    "content-manager": {
+      "visible": true
+
+  },
+
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

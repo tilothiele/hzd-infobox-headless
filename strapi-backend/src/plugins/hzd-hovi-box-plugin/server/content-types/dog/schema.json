@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dogs",
+  "info": {
+    "singularName": "dog",
+    "pluralName": "dogs",
+    "displayName": "Dog"
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": true
+    },
+    "content-type-builder": {
+      "visible": true
+    }
+  },
+  "options": {
+    "comment": ""
+  },
+  "attributes": {
+    "givenName": {
+      "type": "string"
+    },
+    "fullKennelName": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "multiple": false
+    },
+    "microchipNo": {
+      "type": "string"
+    },
+    "stuntLicenseSince": {
+      "type": "date"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "dateOfDeath": {
+      "type": "date"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "F",
+        "M"
+      ]
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "S",
+        "SM",
+        "B"
+      ]
+    },
+
+    "father": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::hzd-hovi-box-plugin.dog"
+    },
+
+    "mother": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::hzd-hovi-box-plugin.dog"
+    }
+  }
+}
